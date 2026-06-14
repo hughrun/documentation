@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 new_location += current_location.slice(1);
             }
         }
-        window.location = new_location;
+        window.location.assign(new_location);
     }
 
     // SELECT VERSION
@@ -34,9 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         var arr = current_location.split("/")
         var regx = /\/v[0-9\.]+/
         if (regx.test(current_location)) {
-            window.location = window.location.href.replace(regx,`/${target_version}`)
+            window.location.assign(window.location.href.replace(regx,`/${target_version}`))
         } else {
-            window.location = `/${target_version}${current_location}`
+            window.location.assign(`/${target_version}${current_location}`)
         }
     }
 
